@@ -65,7 +65,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 </head>
 <body>
 
-<audio id="gateAudio" src="ElevenLabs_2026-11-22T06_30_45__s50_sim51_v4%20(1).mp3" preload="auto" loop></audio>
+<audio id="gateAudio" src="https://pub-cf3979ea764d436e80c7b7cfbfc440ee.r2.dev/ElevenLabs_2026-11-22T06_30_45__s50_sim51_v4%20(1).mp3" preload="auto" loop></audio>
 
 <div class="intro" id="intro"><div class="ii"><div class="im"></div><h1>King of Kings<br>&amp; Lord of Lords</h1><p>The judgement of all mankind.</p><button class="btn" id="enter">Enter</button><div style="margin-top:1.2rem"><select id="tr2"></select></div><p class="in">Sound on</p></div></div>
 
@@ -180,13 +180,7 @@ document.getElementById('enter').onclick=function(){
   document.getElementById('intro').classList.add('hide');
   document.body.classList.remove('locked');
   var a=document.getElementById('gateAudio');
-  if(a){
-    a.muted=false;
-    a.volume=1;
-    try{a.currentTime=0;}catch(err){}
-    var p=a.play();
-    if(p&&p.catch){p.catch(function(){a.load();a.play();});}
-  }
+  if(a){a.currentTime=0;a.volume=1;a.muted=false;var p=a.play();if(p&&p.catch){p.catch(function(){});}}
   document.getElementById('sound').hidden=false;
 };
 var mu=false;
