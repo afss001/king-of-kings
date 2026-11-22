@@ -5,102 +5,143 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>King of Kings &amp; Lord of Lords</title>
 <meta name="description" content="I am the Final Envoy. Welcome to Judgement Day.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<meta property="og:title" content="King of Kings &amp; Lord of Lords">
+<meta property="og:description" content="I am the Final Envoy. Welcome to Judgement Day.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--v:#08080a;--v2:#0f0f13;--b:#f4f1ea;--e:#c8552b;--m:#8a8792;--l:rgba(244,241,234,.12)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--v);color:var(--b);font-family:Inter,sans-serif;line-height:1.7}
+:root{--v:#08080a;--v2:#0f0f13;--b:#f4f1ea;--e:#c8552b;--e2:#e8845c;--m:#8a8792;--l:rgba(244,241,234,.12)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--v);color:var(--b);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
 body.locked{overflow:hidden}
-h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:600;line-height:1.1;margin:0 0 .5em}
-h1{font-size:clamp(2.3rem,6.5vw,4.2rem)}h2{font-size:clamp(1.6rem,3.8vw,2.5rem)}
-p{margin:0 0 1rem}a{color:inherit}
-.w{max-width:1060px;margin:0 auto;padding:0 24px}
-header{position:sticky;top:0;z-index:50;background:rgba(8,8,10,.92);border-bottom:1px solid var(--l)}
-.hi{display:flex;align-items:center;gap:20px;height:68px;flex-wrap:wrap}
-.br{display:flex;align-items:center;gap:10px;text-decoration:none}
-.bm{width:22px;height:22px;border:1px solid var(--e);transform:rotate(45deg);display:grid;place-items:center}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.08;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,7vw,4.6rem)}
+h2{font-size:clamp(1.7rem,4vw,2.7rem)}
+h3{font-size:1.35rem}
+p{margin:0 0 1.1rem}
+a{color:inherit}
+.w{width:100%;max-width:1080px;margin:0 auto;padding:0 26px}
+.skip{position:absolute;left:-9999px;background:#fff;color:#000;padding:12px 18px;z-index:100}
+.skip:focus{left:12px;top:12px}
+
+header{position:sticky;top:0;z-index:50;background:rgba(8,8,10,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--l)}
+.hi{display:flex;align-items:center;gap:24px;height:70px;flex-wrap:wrap}
+.br{display:flex;align-items:center;gap:12px;text-decoration:none}
+.bm{width:24px;height:24px;flex:0 0 24px;border:1px solid var(--e);transform:rotate(45deg);display:grid;place-items:center}
 .bm::after{content:"";width:7px;height:7px;background:var(--e)}
-.bt{font-family:"Cormorant Garamond",serif;font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase}
-nav{margin-left:auto;display:flex;gap:22px}
-nav a{text-decoration:none;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,241,234,.6)}
-nav a:hover{color:var(--b)}
-select{font:inherit;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;background:var(--v2);color:var(--b);border:1px solid var(--l);padding:7px 9px;border-radius:4px;cursor:pointer;max-width:150px}
+.bt{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.22rem;letter-spacing:.06em;text-transform:uppercase}
+nav{margin-left:auto;display:flex;align-items:center;gap:26px}
+nav a{text-decoration:none;font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(244,241,234,.62);font-weight:500}
+nav a:hover,nav a[aria-current]{color:var(--b)}
+.nt{display:none;margin-left:auto;background:none;border:1px solid var(--l);color:var(--b);padding:8px 14px;font:inherit;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+select{font:inherit;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;background:var(--v2);color:var(--b);border:1px solid var(--l);padding:8px 10px;border-radius:4px;cursor:pointer;max-width:150px}
 select:focus{outline:none;border-color:var(--e)}
-.btn{display:inline-block;padding:13px 26px;text-decoration:none;font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;font-weight:600;background:var(--e);color:#0a0603;border:1px solid var(--e);cursor:pointer}
-.btn:hover{background:#e8845c}
+
+.btn{display:inline-block;padding:14px 28px;text-decoration:none;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;background:var(--e);color:#0a0603;border:1px solid var(--e);cursor:pointer;transition:background .18s ease}
+.btn:hover{background:var(--e2);border-color:var(--e2)}
 .gh{background:transparent;color:var(--b);border-color:rgba(244,241,234,.3)}
-.hero{position:relative;overflow:hidden;padding:clamp(70px,13vw,140px) 0 clamp(50px,8vw,90px);border-bottom:1px solid var(--l)}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% -10%,rgba(200,85,43,.26),transparent 65%);pointer-events:none}
-.hero .w{position:relative;max-width:860px}
-.eb{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--e);font-weight:600;margin:0 0 1.1rem}
+.gh:hover{background:rgba(244,241,234,.08);color:var(--b);border-color:var(--b)}
+
+.hero{position:relative;overflow:hidden;padding:clamp(80px,14vw,160px) 0 clamp(60px,9vw,110px);border-bottom:1px solid var(--l)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% -10%,rgba(200,85,43,.26),transparent 65%),radial-gradient(40% 40% at 90% 100%,rgba(201,162,39,.10),transparent 70%);pointer-events:none}
+.hero .w{position:relative;max-width:900px}
+.eb{font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--e);font-weight:600;margin:0 0 1.2rem}
 .hero h1 em{font-style:normal;color:var(--e)}
-.ld{font-size:1.04rem;color:rgba(244,241,234,.7);max-width:56ch}
-.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.8rem}
-section{padding:clamp(50px,7vw,90px) 0}
+.ld{font-size:clamp(1rem,1.7vw,1.15rem);color:rgba(244,241,234,.7);max-width:58ch}
+.acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:2.2rem}
+
+section{padding:clamp(60px,9vw,110px) 0}
 .alt{background:var(--v2);border-top:1px solid var(--l);border-bottom:1px solid var(--l)}
-.sl{color:var(--m);max-width:60ch}
-.proc{font-family:"Cormorant Garamond",serif;font-size:clamp(1.3rem,3vw,2.2rem);line-height:1.3;max-width:46ch;margin:0}
-.tablets{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,4vw,40px);margin-top:2.2rem}
-.tablet{background:radial-gradient(circle at 22% 8%,rgba(255,255,255,.07),transparent 55%),linear-gradient(160deg,#4c4c50,#3b3b40 45%,#2c2c31);border-radius:100px 100px 10px 10px/50px 50px 10px 10px;padding:clamp(24px,4vw,42px) clamp(16px,3vw,30px);border:1px solid rgba(255,255,255,.09);box-shadow:inset 0 2px 0 rgba(255,255,255,.13),inset 0 -8px 20px rgba(0,0,0,.55),0 20px 40px rgba(0,0,0,.55)}
+.sl{color:var(--m);max-width:62ch}
+.sp{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,76px);align-items:start}
+.proc{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.35rem,3.2vw,2.3rem);line-height:1.3;max-width:46ch;margin:0}
+
+.tablets{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,4vw,44px);margin-top:2.4rem}
+.tablet{background:radial-gradient(circle at 22% 8%,rgba(255,255,255,.07),transparent 55%),linear-gradient(160deg,#4c4c50 0%,#3b3b40 45%,#2c2c31 100%);border-radius:110px 110px 10px 10px/55px 55px 10px 10px;padding:clamp(26px,4vw,46px) clamp(18px,3vw,34px);border:1px solid rgba(255,255,255,.09);box-shadow:inset 0 2px 0 rgba(255,255,255,.13),inset 0 -8px 20px rgba(0,0,0,.55),0 22px 44px rgba(0,0,0,.55)}
 .tablet ol{list-style:none;padding:0;margin:0;counter-reset:t}
-.tablet li{counter-increment:t;display:grid;grid-template-columns:auto 1fr;gap:11px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.28)}
+.tablet li{counter-increment:t;display:grid;grid-template-columns:auto 1fr;gap:12px;padding:13px 0;border-bottom:1px solid rgba(0,0,0,.28)}
 .tablet li:last-child{border-bottom:0}
-.tablet li::before{content:counter(t,decimal-leading-zero);font-family:"Cormorant Garamond",serif;color:#c8552b;font-size:.9rem;padding-top:.2rem}
-.tablet p{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(.95rem,1.6vw,1.15rem);line-height:1.4;color:#e9e3d7;text-shadow:0 1px 0 rgba(0,0,0,.75)}
-.aja{border-top:1px solid var(--l);margin-top:2.6rem;padding-top:2.2rem;max-width:54ch}
-.aja p{font-family:"Cormorant Garamond",serif;font-size:clamp(1.15rem,2.4vw,1.55rem);line-height:1.45;margin:0 0 1.1rem}
-.aja .last{color:var(--e);font-size:clamp(1.35rem,3vw,1.95rem);line-height:1.3;margin:1.8rem 0 0}
-.lg{list-style:none;padding:0;margin:2.2rem 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--l);border:1px solid var(--l)}
+.tablet li::before{content:counter(t,decimal-leading-zero);font-family:"Cormorant Garamond",Georgia,serif;color:var(--e);font-size:.92rem;padding-top:.2rem}
+.tablet p{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(.98rem,1.7vw,1.2rem);line-height:1.4;color:#e9e3d7;text-shadow:0 1px 0 rgba(0,0,0,.75),0 -1px 0 rgba(255,255,255,.07)}
+
+.aja{border-top:1px solid var(--l);margin-top:2.8rem;padding-top:2.4rem;max-width:56ch}
+.aja p{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.15rem,2.4vw,1.6rem);line-height:1.45;margin:0 0 1.1rem}
+.aja .last{color:var(--e);font-size:clamp(1.35rem,3vw,2rem);line-height:1.3;margin:1.8rem 0 0}
+
+.lg{list-style:none;padding:0;margin:2.4rem 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--l);border:1px solid var(--l)}
 .lg li{background:var(--v)}
-.lg a{display:flex;flex-direction:column;gap:.2rem;padding:18px 20px;text-decoration:none;height:100%}
+.lg a{display:flex;flex-direction:column;gap:.25rem;padding:20px 22px;text-decoration:none;height:100%}
 .lg a:hover{background:var(--v2)}
-.lg .n{font-family:"Cormorant Garamond",serif;font-size:1.15rem}
-.lg .en{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--e);font-weight:600}
-.ve{position:relative;width:100%;aspect-ratio:16/9;background:var(--v2);border:1px solid var(--l)}
+.lg .n{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.2rem;color:var(--b)}
+.lg .en{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--e);font-weight:600}
+
+.ve{position:relative;width:100%;aspect-ratio:16/9;background:var(--v2);border:1px solid var(--l);overflow:hidden}
 .ve iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.vg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;margin-top:2rem;background:var(--l);border:1px solid var(--l)}
-.vs{display:flex;flex-direction:column;gap:.25rem;justify-content:flex-end;min-height:100px;padding:20px;background:var(--v);text-decoration:none}
+.vg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;margin-top:2.2rem;background:var(--l);border:1px solid var(--l)}
+.vs{display:flex;flex-direction:column;gap:.3rem;justify-content:flex-end;min-height:110px;padding:22px;background:var(--v);text-decoration:none;transition:background .18s ease}
 .vs:hover{background:var(--v2)}
-.vt{font-family:"Cormorant Garamond",serif;font-size:1.1rem}
-form{display:grid;gap:14px;border:1px solid var(--l);padding:26px;background:var(--v2)}
-label{display:grid;gap:6px;font-size:.66rem;letter-spacing:.17em;text-transform:uppercase;color:var(--m);font-weight:600}
-input,textarea{font:inherit;padding:11px 13px;background:var(--v);color:var(--b);border:1px solid var(--l);border-radius:4px}
+.vt{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem;color:var(--b)}
+
+form{display:grid;gap:16px;border:1px solid var(--l);padding:clamp(24px,3.4vw,36px);background:var(--v2)}
+label{display:grid;gap:7px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--m);font-weight:600}
+input,textarea{font:inherit;font-size:.96rem;letter-spacing:normal;text-transform:none;padding:12px 14px;background:var(--v);color:var(--b);border:1px solid var(--l);border-radius:4px}
 input:focus,textarea:focus{outline:none;border-color:var(--e)}
-footer{border-top:1px solid var(--l);padding:46px 0 28px}
-.fi{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;padding-bottom:24px;border-bottom:1px solid var(--l)}
-footer nav{display:flex;flex-wrap:wrap;gap:18px}
-footer nav a{text-decoration:none;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--m)}
-.mu{color:var(--m);margin:0}.sm{font-size:.72rem;padding-top:16px}
-.intro{position:fixed;inset:0;z-index:200;display:grid;place-items:center;text-align:center;background:var(--v);transition:opacity .6s,visibility .6s}
-.intro::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 40%,rgba(200,85,43,.2),transparent 70%)}
+form .btn{justify-self:start;margin-top:4px}
+
+footer{border-top:1px solid var(--l);padding:56px 0 32px;background:var(--v)}
+.fi{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid var(--l)}
+footer nav{display:flex;flex-wrap:wrap;gap:22px}
+footer nav a{text-decoration:none;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--m)}
+footer nav a:hover{color:var(--b)}
+.mu{color:var(--m);margin:0}
+.sm{font-size:.74rem;padding-top:18px;letter-spacing:.04em}
+
+.intro{position:fixed;inset:0;z-index:200;display:grid;place-items:center;text-align:center;background:var(--v);transition:opacity .6s ease,visibility .6s ease}
+.intro::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 40%,rgba(200,85,43,.20),transparent 70%);pointer-events:none}
 .intro.hide{opacity:0;visibility:hidden;pointer-events:none}
 .ii{position:relative;padding:24px;max-width:600px}
-.im{width:30px;height:30px;margin:0 auto 1.3rem;border:1px solid var(--e);transform:rotate(45deg);display:grid;place-items:center}
+.im{width:32px;height:32px;margin:0 auto 1.4rem;border:1px solid var(--e);transform:rotate(45deg);display:grid;place-items:center}
 .im::after{content:"";width:9px;height:9px;background:var(--e)}
-.intro p{color:var(--m);margin-bottom:1.5rem}
-.in{margin-top:1.1rem;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--m)}
-#aud{position:fixed;width:1px;height:1px;left:-9999px;border:0}
-.st{position:fixed;right:16px;bottom:16px;z-index:150;background:rgba(8,8,10,.85);color:var(--b);border:1px solid var(--l);padding:9px 15px;border-radius:999px;font:inherit;font-size:.64rem;letter-spacing:.17em;text-transform:uppercase;cursor:pointer}
+.intro p{color:var(--m);margin-bottom:1.6rem}
+#vid{display:none;margin:0 auto 1.6rem;max-width:440px;width:100%}
+.in{margin-top:1.2rem;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--m)}
+.st{position:fixed;right:18px;bottom:18px;z-index:150;background:rgba(8,8,10,.85);color:var(--b);border:1px solid var(--l);padding:10px 16px;border-radius:999px;font:inherit;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px)}
 .st:hover{border-color:var(--e);color:var(--e)}
-@media(max-width:860px){nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--v);padding:10px 24px 20px;border-bottom:1px solid var(--l)}nav.open{display:flex}nav a{padding:12px 0;border-bottom:1px solid var(--l)}.tablets{grid-template-columns:1fr}}
+
+@media(max-width:860px){
+  .sp{grid-template-columns:1fr}
+  .nt{display:block}
+  nav{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--v);padding:10px 26px 22px;border-bottom:1px solid var(--l)}
+  nav.open{display:flex}
+  nav a{padding:13px 0;width:100%;border-bottom:1px solid var(--l)}
+  .tablets{grid-template-columns:1fr}
+  .tablet li{grid-template-columns:1fr;gap:.5rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+
+<a class="skip" href="#top">Skip to content</a>
 
 <div class="intro" id="intro"><div class="ii">
 <div class="im"></div>
 <h1>King of Kings<br>&amp; Lord of Lords</h1>
 <p>The judgement of all mankind.</p>
-<button class="btn" id="enter">Enter</button>
-<div style="margin-top:1.4rem"><select id="tr2" aria-label="Translate"></select></div>
+<div id="vid"></div>
+<button class="btn" id="enter" type="button">Enter</button>
+<div style="margin-top:1.4rem"><select id="tr2" aria-label="Translate this page"></select></div>
 <p class="in">Sound on</p>
 </div></div>
 
-<iframe id="aud" src="https://www.youtube-nocookie.com/embed/0JinfFfDahQ?enablejsapi=1&playsinline=1&controls=0" title="The Almighty Shout" allow="autoplay; encrypted-media"></iframe>
-<button class="st" id="sound" hidden>Sound on</button>
+<button class="st" id="sound" type="button" hidden>Sound on</button>
 
 <header><div class="w hi">
 <a class="br" href="#top"><span class="bm"></span><span class="bt">King of Kings</span></a>
+<button class="nt" id="nt" aria-expanded="false">Menu</button>
 <nav id="nav">
 <a href="#proclamation">Proclamation</a>
 <a href="#commandments">Commandments</a>
@@ -108,10 +149,11 @@ footer nav a{text-decoration:none;font-size:.7rem;letter-spacing:.14em;text-tran
 <a href="#watch">Watch</a>
 <a href="#contact">Contact</a>
 </nav>
-<select id="tr" aria-label="Translate"></select>
+<select id="tr" aria-label="Translate this page"></select>
 </div></header>
 
 <main id="top">
+
 <section class="hero"><div class="w">
 <p class="eb">I am the Final Envoy &mdash; &ldquo;Aja&rdquo;</p>
 <h1>Welcome to<br><em>Judgement Day</em>.</h1>
@@ -152,65 +194,172 @@ footer nav a{text-decoration:none;font-size:.7rem;letter-spacing:.14em;text-tran
 <p>I am not God. I am His Son.</p>
 <p>I was born Adam. I returned as Jesus. Now I return again as Aja.</p>
 <p>Aja stands for Adam, Jesus, Aja.</p>
-<p class="last">I am my Father&rsquo;s very last Envoy.</p>
+<p class="last">I&rsquo;m back, folks. Welcome to judgement.</p>
 </div>
 </div></section>
 
 <section class="alt" id="languages"><div class="w">
 <p class="eb">In every tongue</p>
-<h2>The Commandments, in every language</h2>
+<h2>The Ten Commandments, in every language</h2>
 <p class="sl">Each opens Exodus 20 in that language. Nothing altered, nothing paraphrased.</p>
-<ul class="lg" id="lg"></ul>
-<p style="margin-top:2.2rem"><a class="btn" href="https://www.biblegateway.com/versions/" target="_blank" rel="noopener">Every translation, every language</a></p>
-<p style="margin-top:1rem"><a class="btn gh" href="https://www.bible.com/bible/1/GEN.1" target="_blank" rel="noopener">Bible.com &mdash; every language</a></p>
+<ul class="lg">
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">English</span><span class="en">English</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Español</span><span class="en">Spanish</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Français</span><span class="en">French</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Deutsch</span><span class="en">German</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Italiano</span><span class="en">Italian</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Português</span><span class="en">Portuguese</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Nederlands</span><span class="en">Dutch</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Русский</span><span class="en">Russian</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Polski</span><span class="en">Polish</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Українська</span><span class="en">Ukrainian</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Ελληνικά</span><span class="en">Greek</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">עברית</span><span class="en">Hebrew</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">العربية</span><span class="en">Arabic</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">فارسی</span><span class="en">Persian</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Türkçe</span><span class="en">Turkish</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">हिन्दी</span><span class="en">Hindi</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">বাংলা</span><span class="en">Bengali</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">اردو</span><span class="en">Urdu</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">தமிழ்</span><span class="en">Tamil</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">中文</span><span class="en">Chinese</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">日本語</span><span class="en">Japanese</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">한국어</span><span class="en">Korean</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Tiếng Việt</span><span class="en">Vietnamese</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">ไทย</span><span class="en">Thai</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Indonesia</span><span class="en">Indonesian</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Tagalog</span><span class="en">Filipino</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Kiswahili</span><span class="en">Swahili</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">አማርኛ</span><span class="en">Amharic</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Yorùbá</span><span class="en">Yoruba</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Hausa</span><span class="en">Hausa</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">isiZulu</span><span class="en">Zulu</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Afrikaans</span><span class="en">Afrikaans</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">ʻŌlelo Hawaiʻi</span><span class="en">Hawaiian</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Gagana Samoa</span><span class="en">Samoan</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Lea Faka-Tonga</span><span class="en">Tongan</span></a></li>
+<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">Te Reo Māori</span><span class="en">Māori</span></a></li>
+</ul>
+<p style="margin-top:2.4rem"><a class="btn" href="https://www.biblegateway.com/versions/" target="_blank" rel="noopener">Every translation, every language</a></p>
+<p class="sl" style="margin-top:1rem">The complete catalogue &mdash; every published translation of the Bible, listed by language and version.</p>
 </div></section>
 
 <section id="watch"><div class="w">
 <p class="eb">Watch</p>
 <h2>The Almighty Shout</h2>
-<div class="ve"><iframe src="https://www.youtube-nocookie.com/embed/AuhdY4H2Nmw" title="The Almighty Shout" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-<div class="vg" id="vg"></div>
+<div class="ve"><iframe src="https://www.youtube-nocookie.com/embed/AuhdY4H2Nmw" title="The Almighty Shout" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<div class="vg">
+<a class="vs" href="https://www.youtube.com/watch?v=AuhdY4H2Nmw" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 01</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=juk8t574cbE" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 02</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=cNTXUXLTBLo" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 03</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=c9iK-vYy9Wc" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 04</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=lNBx6Yh6INg" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 05</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=CnzNF4MLdxI" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 06</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=CJFX289PLA4" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 07</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=8455jhxq4c8" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 08</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=fQ8Z_J0Nmfs" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 09</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=0JinfFfDahQ" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 10</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=LmPD8KsDq14" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 11</span><span class="vt">The Almighty Shout</span></a>
+<a class="vs" href="https://www.youtube.com/watch?v=LGYSyEvrK6U" target="_blank" rel="noopener"><span class="eb" style="margin:0">Version 12</span><span class="vt">The Almighty Shout</span></a>
+</div>
+<p style="margin-top:2.4rem"><a class="btn gh" href="https://www.youtube.com/@kingofkingslordoflords001" target="_blank" rel="noopener">Full channel on YouTube</a></p>
 </div></section>
 
-<section class="alt" id="contact"><div class="w">
+<section class="alt" id="contact"><div class="w sp">
+<div>
 <p class="eb">Contact</p>
 <h2>Say what you need to say</h2>
+<p class="sl">Questions, prayer requests, or a word you need to send. Nothing is too small to bring.</p>
+<p class="sl">Messages are read, and prayer requests are treated as private.</p>
+</div>
 <form action="#" method="post">
-<label>Your name<input type="text" name="name" required></label>
-<label>Email<input type="email" name="email" required></label>
-<label>Message<textarea name="message" rows="5" required></textarea></label>
+<label>Your name<input type="text" name="name" autocomplete="name" required></label>
+<label>Email<input type="email" name="email" autocomplete="email" required></label>
+<label>Message<textarea name="message" rows="6" required></textarea></label>
 <button class="btn" type="submit">Send</button>
 </form>
 </div></section>
+
 </main>
 
 <footer><div class="w">
 <div class="fi">
-<div><p class="bt" style="margin:0 0 .3rem">King of Kings &amp; Lord of Lords</p><p class="mu">Judgement Day</p></div>
-<nav><a href="#proclamation">Proclamation</a><a href="#commandments">Commandments</a><a href="#languages">Languages</a><a href="#watch">Watch</a><a href="#contact">Contact</a></nav>
+<div>
+<p class="bt" style="margin:0 0 .4rem">King of Kings &amp; Lord of Lords</p>
+<p class="mu">I am my Father&rsquo;s very last Envoy.</p>
+</div>
+<nav>
+<a href="#proclamation">Proclamation</a>
+<a href="#commandments">Commandments</a>
+<a href="#languages">Languages</a>
+<a href="#watch">Watch</a>
+<a href="#contact">Contact</a>
+</nav>
 </div>
 <p class="mu sm">&copy; <span id="yr">2026</span> King of Kings. All rights reserved.</p>
 </div></footer>
 
 <script>
-var LANGS=[["es","Español"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["pt","Português"],["nl","Nederlands"],["ru","Русский"],["pl","Polski"],["uk","Українська"],["el","Ελληνικά"],["he","עברית"],["ar","العربية"],["fa","فارسی"],["tr","Türkçe"],["hi","हिन्दी"],["bn","বাংলা"],["ur","اردو"],["ta","தமிழ்"],["te","తెలుగు"],["ml","മലയാളം"],["gu","ગુજરાતી"],["mr","मराठी"],["ne","नेपाली"],["si","සිංහල"],["zh-CN","中文（简体）"],["zh-TW","中文（繁體）"],["ja","日本語"],["ko","한국어"],["vi","Tiếng Việt"],["th","ไทย"],["id","Indonesia"],["ms","Melayu"],["tl","Tagalog"],["sw","Kiswahili"],["am","አማርኛ"],["yo","Yorùbá"],["ig","Igbo"],["ha","Hausa"],["zu","isiZulu"],["af","Afrikaans"],["haw","ʻŌlelo Hawaiʻi"],["sm","Gagana Samoa"],["to","Lea Faka-Tonga"],["mi","Te Reo Māori"],["fj","Vosa Vakaviti"],["sv","Svenska"],["no","Norsk"],["da","Dansk"],["fi","Suomi"],["is","Íslenska"],["cs","Čeština"],["sk","Slovenčina"],["hu","Magyar"],["ro","Română"],["bg","Български"],["hr","Hrvatski"],["sr","Српски"],["sl","Slovenščina"],["lt","Lietuvių"],["lv","Latviešu"],["et","Eesti"],["sq","Shqip"],["mk","Македонски"],["be","Беларуская"],["ka","ქართული"],["hy","Հայերեն"],["az","Azərbaycan"],["kk","Қазақ"],["uz","Oʻzbek"],["mn","Монгол"],["km","ខ្មែរ"],["lo","ລາວ"],["my","မြန်မာ"],["cy","Cymraeg"],["ga","Gaeilge"],["mt","Malti"],["eo","Esperanto"]];
-var VIDS=["AuhdY4H2Nmw","juk8t574cbE","cNTXUXLTBLo","c9iK-vYy9Wc","lNBx6Yh6INg","CnzNF4MLdxI","CJFX289PLA4","8455jhxq4c8","fQ8Z_J0Nmfs","0JinfFfDahQ","LmPD8KsDq14","LGYSyEvrK6U"];
-function go(c){location.href='https://translate.google.com/translate?sl=en&tl='+c+'&u='+encodeURIComponent(location.href)}
-['tr','tr2'].forEach(function(id){var s=document.getElementById(id);if(!s)return;
-s.innerHTML='<option value="">Translate</option>'+LANGS.map(function(l){return '<option value="'+l[0]+'">'+l[1]+'</option>'}).join('');
-s.addEventListener('change',function(){if(this.value)go(this.value)})});
-var lg=document.getElementById('lg');
-if(lg)lg.innerHTML=LANGS.map(function(l){return '<li><a href="https://www.biblegateway.com/passage/?search=Exodus%2020" target="_blank" rel="noopener"><span class="n">'+l[1]+'</span><span class="en">'+l[0]+'</span></a></li>'}).join('');
-var vg=document.getElementById('vg');
-if(vg)vg.innerHTML=VIDS.map(function(v,i){return '<a class="vs" href="https://www.youtube.com/watch?v='+v+'" target="_blank" rel="noopener"><span class="en" style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--e);font-weight:600">Version '+String(i+1).padStart(2,'0')+'</span><span class="vt">The Almighty Shout</span></a>'}).join('');
-var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
-var ov=document.getElementById('intro'),en=document.getElementById('enter'),fr=document.getElementById('aud'),sb=document.getElementById('sound'),mu=false;
-function cmd(f){if(fr&&fr.contentWindow)fr.contentWindow.postMessage(JSON.stringify({event:'command',func:f,args:[]}),'*')}
-if(ov&&en){document.body.classList.add('locked');
-en.addEventListener('click',function(){ov.classList.add('hide');document.body.classList.remove('locked');setTimeout(function(){cmd('playVideo');if(sb)sb.hidden=false},3000)})}
-if(sb)sb.addEventListener('click',function(){mu=!mu;cmd(mu?'mute':'unMute');sb.textContent=mu?'Sound off':'Sound on'});
-var nt=document.getElementById('nt'),nv=document.getElementById('nav');
-if(nt&&nv)nt.addEventListener('click',function(){nv.classList.toggle('open')});
+var L=[["es","Español"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["pt","Português"],["nl","Nederlands"],["ru","Русский"],["pl","Polski"],["uk","Українська"],["el","Ελληνικά"],["he","עברית"],["ar","العربية"],["fa","فارسی"],["tr","Türkçe"],["hi","हिन्दी"],["bn","বাংলা"],["ur","اردو"],["ta","தமிழ்"],["te","తెలుగు"],["ml","മലയാളം"],["gu","ગુજરાતી"],["mr","मराठी"],["ne","नेपाली"],["si","සිංහල"],["zh-CN","中文简体"],["zh-TW","中文繁體"],["ja","日本語"],["ko","한국어"],["vi","Tiếng Việt"],["th","ไทย"],["id","Indonesia"],["ms","Melayu"],["tl","Tagalog"],["sw","Kiswahili"],["am","አማርኛ"],["yo","Yorùbá"],["ig","Igbo"],["ha","Hausa"],["zu","isiZulu"],["af","Afrikaans"],["haw","ʻŌlelo Hawaiʻi"],["sm","Gagana Samoa"],["to","Lea Faka-Tonga"],["mi","Te Reo Māori"],["fj","Vosa Vakaviti"],["sv","Svenska"],["no","Norsk"],["da","Dansk"],["fi","Suomi"],["is","Íslenska"],["cs","Čeština"],["sk","Slovenčina"],["hu","Magyar"],["ro","Română"],["bg","Български"],["hr","Hrvatski"],["sr","Српски"],["sl","Slovenščina"],["lt","Lietuvių"],["lv","Latviešu"],["et","Eesti"],["sq","Shqip"],["mk","Македонски"],["be","Беларуская"],["ka","ქართული"],["hy","Հայերեն"],["az","Azərbaycan"],["kk","Қазақ"],["uz","Oʻzbek"],["mn","Монгол"],["km","ខ្មែរ"],["lo","ລາວ"],["my","မြန်မာ"],["cy","Cymraeg"],["ga","Gaeilge"],["mt","Malti"],["eo","Esperanto"]];
+
+function fill(sel){
+  var h='<option value="">Translate</option>';
+  for(var i=0;i<L.length;i++){h+='<option value="'+L[i][0]+'">'+L[i][1]+'</option>';}
+  sel.innerHTML=h;
+}
+fill(document.getElementById('tr'));
+fill(document.getElementById('tr2'));
+
+function go(v){
+  if(!v) return;
+  location.href='https://translate.google.com/translate?sl=en&tl='+v+'&u='+encodeURIComponent(location.href);
+}
+document.getElementById('tr').onchange=function(){go(this.value);};
+document.getElementById('tr2').onchange=function(){go(this.value);};
+
+document.getElementById('nt').onclick=function(){
+  var n=document.getElementById('nav');
+  var o=n.classList.toggle('open');
+  this.setAttribute('aria-expanded',String(o));
+};
+document.getElementById('nav').onclick=function(e){
+  if(e.target.tagName==='A'){
+    this.classList.remove('open');
+    document.getElementById('nt').setAttribute('aria-expanded','false');
+  }
+};
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.body.classList.add('locked');
+
+var frame=null, muted=false;
+
+setTimeout(function(){
+  var d=document.getElementById('vid');
+  d.style.display='block';
+  d.innerHTML='<div class="ve"><iframe id="aud" src="https://www.youtube-nocookie.com/embed/-q1WNpowFVY?autoplay=1&mute=1&enablejsapi=1&playsinline=1&controls=0&rel=0" title="The Almighty Shout" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>';
+  frame=document.getElementById('aud');
+},3000);
+
+function cmd(fn,args){
+  if(frame&&frame.contentWindow){
+    frame.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:args||[]}),'*');
+  }
+}
+
+document.getElementById('enter').onclick=function(){
+  document.getElementById('intro').classList.add('hide');
+  document.body.classList.remove('locked');
+  cmd('unMute');
+  cmd('playVideo');
+  document.getElementById('sound').hidden=false;
+};
+
+document.getElementById('sound').onclick=function(){
+  muted=!muted;
+  cmd(muted?'mute':'unMute');
+  this.textContent=muted?'Sound off':'Sound on';
+};
 </script>
 </body>
 </html>
