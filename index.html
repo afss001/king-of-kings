@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>King of Kings &amp; Lord of Lords</title>
 <meta name="description" content="I am the son of the one true GOD. Judgement Day is here.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2308080a'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%23c8552b' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--v:#08080a;--v2:#0f0f13;--b:#f4f1ea;--e:#c8552b;--m:#8a8792;--l:rgba(244,241,234,.12)}
@@ -155,4 +154,56 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 var MAIL="averyfilms@optusnet.com.au";
 var L=[["es","Espanol"],["fr","Francais"],["de","Deutsch"],["it","Italiano"],["pt","Portugues"],["ru","Russkiy"],["ar","Arabiya"],["hi","Hindi"],["zh-CN","Chinese"],["ja","Japanese"],["ko","Korean"],["id","Indonesia"]];
 var V=["AuhdY4H2Nmw","juk8t574cbE","cNTXUXLTBLo","c9iK-vYy9Wc","lNBx6Yh6INg","CnzNF4MLdxI","CJFX289PLA4","8455jhxq4c8","fQ8Z_J0Nmfs","0JinfFfDahQ","LmPD8KsDq14","LGYSyEvrK6U"];
-function opts(s){var h='<option value="">Translate</option>';for(var i=0;i<L.length;i++){h+='<option value="'+
+function opts(s){var h='<option value="">Translate</option>';for(var i=0;i<L.length;i++){h+='<option value="'+L[i][0]+'">'+L[i][1]+'</option>';}s.innerHTML=h;}
+opts(document.getElementById('tr'));opts(document.getElementById('tr2'));
+function go(v){
+  if(!v)return;
+  var h=location.hostname;
+  if(h&&h.indexOf('.')>0&&h.indexOf('localhost')<0){
+    location.href='https://'+h+'.translate.goog'+location.pathname+'?_x_tr_sl=en&_x_tr_tl='+v+'&_x_tr_hl=en';
+  }else{
+    location.href='https://translate.google.com/?sl=en&tl='+v+'&op=translate';
+  }
+}
+document.getElementById('tr').onchange=function(){go(this.value);};
+document.getElementById('tr2').onchange=function(){go(this.value);};
+document.getElementById('yr').textContent=new Date().getFullYear();
+var g='';for(var i=0;i<V.length;i++){var n=('0'+(i+1)).slice(-2);g+='<button class="vs" data-id="'+V[i]+'" type="button"><span class="eb" style="margin:0">Version '+n+'</span><span class="vt">The Almighty Shout</span></button>';}
+document.getElementById('vg').innerHTML=g;
+document.body.classList.add('locked');
+setTimeout(function(){
+  var a=document.getElementById('gateAudio');
+  if(a){a.volume=1;var p=a.play();if(p&&p.catch){p.catch(function(){});}}
+},3000);
+document.getElementById('vg').addEventListener('click',function(e){
+  var b=e.target.closest('.vs');if(!b)return;
+  document.getElementById('yt2').src='https://www.youtube.com/embed/'+b.getAttribute('data-id')+'?rel=0&playsinline=1&autoplay=1';
+  document.getElementById('watch').scrollIntoView({behavior:'smooth'});
+});
+document.getElementById('enter').onclick=function(){
+  document.getElementById('intro').classList.add('hide');
+  document.body.classList.remove('locked');
+  var a=document.getElementById('gateAudio');
+  if(a){a.volume=1;var p=a.play();if(p&&p.catch){p.catch(function(){});}}
+  document.getElementById('sound').hidden=false;
+};
+var mu=false;
+document.getElementById('sound').onclick=function(){
+  mu=!mu;
+  var a=document.getElementById('gateAudio');
+  if(a){a.muted=mu;}
+  this.textContent=mu?'Sound on':'Sound off';
+};
+document.getElementById('cf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('cn').value.trim();
+  var em=document.getElementById('ce').value.trim();
+  var m=document.getElementById('cm').value.trim();
+  var out=document.getElementById('cmsg');
+  if(!n||!em||!m){out.textContent='Please fill in every field.';return;}
+  location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Website message from '+n)+'&body='+encodeURIComponent(m+'\n\nReply to: '+em);
+  out.textContent='Opening your email app...';
+});
+</script>
+</body>
+</html>
