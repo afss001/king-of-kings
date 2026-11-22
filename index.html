@@ -41,9 +41,9 @@ section{padding:clamp(45px,6vw,85px) 0}
 .aja{border-top:1px solid var(--l);margin-top:2.4rem;padding-top:2rem;max-width:54ch}
 .aja p{font-family:"Cormorant Garamond",serif;font-size:clamp(1.05rem,2.2vw,1.45rem);line-height:1.45;margin:0 0 1rem}
 .aja .last{color:var(--e);font-size:clamp(1.25rem,2.8vw,1.85rem);line-height:1.3;margin:1.6rem 0 0}
-.ve{position:relative;width:100%;aspect-ratio:16/9;background:var(--v2);border:1px solid var(--l)}.ve iframe,.ve #yt2,.ve #ytGate{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ve{position:relative;width:100%;aspect-ratio:16/9;background:var(--v2);border:1px solid var(--l)}.ve iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .vg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;margin-top:1.8rem;background:var(--l);border:1px solid var(--l)}
-.vs{display:flex;flex-direction:column;gap:.2rem;justify-content:flex-end;min-height:80px;padding:16px;background:var(--v);text-decoration:none;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit}.vs:hover{background:var(--v2)}
+.vs{display:flex;flex-direction:column;gap:.2rem;justify-content:flex-end;min-height:80px;padding:16px;background:var(--v);border:0;cursor:pointer;text-align:left;font:inherit;color:inherit}.vs:hover{background:var(--v2)}
 .vt{font-family:"Cormorant Garamond",serif;font-size:1rem}
 form{display:grid;gap:14px;border:1px solid var(--l);padding:24px;background:var(--v2)}
 label{display:grid;gap:6px;font-size:.64rem;letter-spacing:.17em;text-transform:uppercase;color:var(--m);font-weight:600}
@@ -68,7 +68,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 </head>
 <body>
 
-<div class="intro" id="intro"><div class="ii"><div class="im"></div><h1>King of Kings<br>&amp; Lord of Lords</h1><p>The judgement of all mankind.</p><div id="gateWrap"><div class="ve"><div id="ytGate"></div></div></div><button class="btn" id="enter">Enter</button><div style="margin-top:1.2rem"><select id="tr2"></select></div><p class="in">Sound on</p></div></div>
+<div class="intro" id="intro"><div class="ii"><div class="im"></div><h1>King of Kings<br>&amp; Lord of Lords</h1><p>The judgement of all mankind.</p><div id="gateWrap"><div class="ve" id="gateBox"></div></div><button class="btn" id="enter">Enter</button><div style="margin-top:1.2rem"><select id="tr2"></select></div><p class="in">Sound on</p></div></div>
 
 <button class="st" id="sound" hidden>Sound on</button>
 
@@ -127,7 +127,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 </div></section>
 
 <section class="alt" id="watch"><div class="w"><p class="eb">Watch</p><h2>The Almighty Shout</h2>
-<div class="ve"><div id="yt2"></div></div>
+<div class="ve"><iframe id="yt2" src="https://www.youtube.com/embed/-q1WNpowFVY?rel=0&playsinline=1" title="The Almighty Shout" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
 <div class="vg" id="vg"></div>
 <p style="margin-top:2rem"><a class="btn gh" href="https://www.youtube.com/@kingofkingslordoflords001" target="_blank" rel="noopener">Full channel on YouTube</a></p>
 </div></section>
@@ -151,8 +151,9 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 </div></footer>
 
 <script>
-var L=[["es","Español"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["pt","Português"],["nl","Nederlands"],["ru","Русский"],["pl","Polski"],["uk","Українська"],["el","Ελληνικά"],["he","עברית"],["ar","العربية"],["fa","فارسی"],["tr","Türkçe"],["hi","हिन्दी"],["bn","বাংলা"],["ur","اردو"],["ta","தமிழ்"],["zh-CN","中文简体"],["zh-TW","中文繁體"],["ja","日本語"],["ko","한국어"],["vi","Tiếng Việt"],["th","ไทย"],["id","Indonesia"],["tl","Tagalog"],["sw","Kiswahili"],["am","አማርኛ"],["yo","Yorùbá"],["ha","Hausa"],["zu","isiZulu"],["af","Afrikaans"],["haw","ʻŌlelo Hawaiʻi"],["sm","Gagana Samoa"],["to","Lea Faka-Tonga"],["mi","Te Reo Māori"],["sv","Svenska"],["no","Norsk"],["da","Dansk"],["fi","Suomi"],["cs","Čeština"],["hu","Magyar"],["ro","Română"],["bg","Български"],["hr","Hrvatski"],["sr","Српски"],["lt","Lietuvių"],["lv","Latviešu"],["et","Eesti"],["sq","Shqip"],["ka","ქართული"],["hy","Հայերեն"],["az","Azərbaycan"],["kk","Қазақ"],["uz","Oʻzbek"],["km","ខ្មែរ"],["lo","ລາວ"],["my","မြန်မာ"],["cy","Cymraeg"],["ga","Gaeilge"],["mt","Malti"],["eo","Esperanto"]];
+var L=[["es","Espanol"],["fr","Francais"],["de","Deutsch"],["it","Italiano"],["pt","Portugues"],["nl","Nederlands"],["ru","Russkiy"],["pl","Polski"],["uk","Ukrainska"],["el","Ellinika"],["he","Ivrit"],["ar","Arabiya"],["fa","Farsi"],["tr","Turkce"],["hi","Hindi"],["bn","Bangla"],["ur","Urdu"],["zh-CN","Chinese Simplified"],["zh-TW","Chinese Traditional"],["ja","Japanese"],["ko","Korean"],["vi","Vietnamese"],["th","Thai"],["id","Indonesia"],["tl","Tagalog"],["sw","Kiswahili"],["af","Afrikaans"],["sv","Svenska"],["no","Norsk"],["da","Dansk"],["fi","Suomi"],["cs","Cestina"],["hu","Magyar"],["ro","Romana"],["bg","Balgarski"],["hr","Hrvatski"],["sr","Srpski"],["lt","Lietuviu"],["lv","Latviesu"],["et","Eesti"],["sq","Shqip"],["ka","Kartuli"],["hy","Hayeren"],["az","Azerbaycan"],["kk","Qazaq"],["uz","Ozbek"],["km","Khmer"],["lo","Lao"],["my","Myanmar"],["cy","Cymraeg"],["ga","Gaeilge"],["mt","Malti"],["eo","Esperanto"]];
 var V=["AuhdY4H2Nmw","juk8t574cbE","cNTXUXLTBLo","c9iK-vYy9Wc","lNBx6Yh6INg","CnzNF4MLdxI","CJFX289PLA4","8455jhxq4c8","fQ8Z_J0Nmfs","0JinfFfDahQ","LmPD8KsDq14","LGYSyEvrK6U"];
+var GATE="-q1WNpowFVY";
 function opts(s){var h='<option value="">Translate</option>';for(var i=0;i<L.length;i++){h+='<option value="'+L[i][0]+'">'+L[i][1]+'</option>';}s.innerHTML=h;}
 opts(document.getElementById('tr'));opts(document.getElementById('tr2'));
 function go(v){if(!v)return;location.href='https://translate.google.com/translate?sl=en&tl='+v+'&u='+encodeURIComponent(location.href);}
@@ -162,30 +163,26 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 var g='';for(var i=0;i<V.length;i++){var n=('0'+(i+1)).slice(-2);g+='<button class="vs" data-id="'+V[i]+'" type="button"><span class="eb" style="margin:0">Version '+n+'</span><span class="vt">The Almighty Shout</span></button>';}
 document.getElementById('vg').innerHTML=g;
 document.body.classList.add('locked');
-var gate=null,player=null;
-function onYouTubeIframeAPIReady(){
-  gate=new YT.Player('ytGate',{videoId:'-q1WNpowFVY',playerVars:{autoplay:1,mute:1,controls:0,playsinline:1,rel:0,modestbranding:1,disablekb:1,fs:0},events:{onReady:function(e){e.target.mute();e.target.playVideo();}}});
-  player=new YT.Player('yt2',{videoId:V[0],playerVars:{autoplay:0,controls:1,playsinline:1,rel:0,modestbranding:1},events:{onReady:function(e){e.target.cueVideoById(V[0]);}}});
+function buildGate(mute){
+  document.getElementById('gateBox').innerHTML='<iframe src="https://www.youtube.com/embed/'+GATE+'?autoplay=1&mute='+(mute?1:0)+'&controls=0&rel=0&playsinline=1&loop=1&playlist='+GATE+'" title="Gate" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>';
 }
-setTimeout(function(){document.getElementById('gateWrap').style.display='block';},3000);
+setTimeout(function(){document.getElementById('gateWrap').style.display='block';buildGate(true);},3000);
 document.getElementById('vg').addEventListener('click',function(e){
   var b=e.target.closest('.vs');if(!b)return;
-  if(player&&player.loadVideoById){player.loadVideoById(b.getAttribute('data-id'));}
+  document.getElementById('yt2').src='https://www.youtube.com/embed/'+b.getAttribute('data-id')+'?rel=0&playsinline=1&autoplay=1';
   document.getElementById('watch').scrollIntoView({behavior:'smooth'});
 });
 document.getElementById('enter').onclick=function(){
   document.getElementById('intro').classList.add('hide');
   document.body.classList.remove('locked');
-  if(gate&&gate.unMute){gate.unMute();gate.playVideo();}
+  buildGate(false);
   document.getElementById('sound').hidden=false;
 };
 var mu=false;
 document.getElementById('sound').onclick=function(){
-  mu=!mu;
-  if(gate){mu?gate.mute():gate.unMute();}
+  mu=!mu;buildGate(!mu);
   this.textContent=mu?'Sound off':'Sound on';
 };
 </script>
-<script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
