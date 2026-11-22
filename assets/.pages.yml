@@ -1,0 +1,74 @@
+media:
+  - name: images
+    label: Images
+    input: assets/img
+    output: /assets/img
+    extensions: [jpg, jpeg, png, webp, avif, gif, svg]
+  - name: documents
+    label: Documents
+    input: assets/docs
+    output: /assets/docs
+    extensions: [pdf, doc, docx, txt, epub]
+
+content:
+  - name: declarations
+    label: Declarations
+    type: file
+    path: content/declarations.json
+    fields:
+      - name: items
+        label: Declarations
+        type: object
+        list: true
+        fields:
+          - name: text
+            label: Declaration
+            type: string
+            required: true
+          - name: reference
+            label: Scripture reference
+            type: string
+
+  - name: videos
+    label: Videos
+    type: file
+    path: content/videos.json
+    fields:
+      - name: featured
+        label: Featured video ID
+        type: string
+      - name: items
+        label: Versions
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: youtube
+            label: YouTube video ID
+            type: string
+            required: true
+
+  - name: documents
+    label: Documents
+    type: file
+    path: content/documents.json
+    fields:
+      - name: items
+        label: Documents
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: file
+            label: File
+            type: file
+            options:
+              media: documents
+          - name: description
+            label: Description
+            type: string
