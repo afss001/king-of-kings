@@ -7,9 +7,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(8,8,10,.92);border-botto
 .hi{display:flex;align-items:center;gap:18px;height:66px;flex-wrap:wrap}
 .br{display:flex;align-items:center;gap:10px;text-decoration:none}
 .bm{width:20px;height:20px;border:1px solid var(--e);transform:rotate(45deg);display:grid;place-items:center}.bm::after{content:"";width:6px;height:6px;background:var(--e)}
-.bt{font-family:"Cormorant Garamond",serif;font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase}
-nav{margin-left:auto;display:flex;gap:20px}nav a{text-decoration:none;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(244,241,234,.6)}nav a:hover{color:var(--b)}
-select{font:inherit;font-size:.68rem;background:var(--v2);color:var(--b);border:1px solid var(--l);padding:7px 8px;border-radius:4px;cursor:pointer;max-width:140px}
+.bt{font-family:"Cormorant Garamond",serif;font-size:1.05rem;letter-spacing:.05em;text-transform:uppercase}
+nav{margin-left:auto;display:flex;gap:18px}nav a{text-decoration:none;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,241,234,.6)}nav a:hover{color:var(--b)}
+select{font:inherit;font-size:.66rem;background:var(--v2);color:var(--b);border:1px solid var(--l);padding:7px 8px;border-radius:4px;cursor:pointer;max-width:130px}
 .btn{display:inline-block;padding:12px 24px;text-decoration:none;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;background:var(--e);color:#0a0603;border:1px solid var(--e);cursor:pointer}.btn:hover{background:#e8845c}
 .gh{background:transparent;color:var(--b);border-color:rgba(244,241,234,.3)}
 .hero{position:relative;overflow:hidden;padding:clamp(60px,12vw,130px) 0 clamp(45px,7vw,85px);border-bottom:1px solid var(--l)}
@@ -33,7 +33,7 @@ section{padding:clamp(45px,6vw,85px) 0}
 .aja{border-top:1px solid var(--l);margin-top:2.4rem;padding-top:2rem;max-width:54ch}
 .aja p{font-family:"Cormorant Garamond",serif;font-size:clamp(1.05rem,2.2vw,1.45rem);line-height:1.45;margin:0 0 1rem}
 .aja .last{color:var(--e);font-size:clamp(1.25rem,2.8vw,1.85rem);line-height:1.3;margin:1.6rem 0 0}
-.ve{position:relative;width:100%;aspect-ratio:16/9;background:var(--v2);border:1px solid var(--l)}.ve iframe,.ve #yt2{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ve{position:relative;width:100%;aspect-ratio:16/9;background:var(--v2);border:1px solid var(--l)}.ve iframe,.ve #yt2,.ve #ytGate{position:absolute;inset:0;width:100%;height:100%;border:0}
 .vg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;margin-top:1.8rem;background:var(--l);border:1px solid var(--l)}
 .vs{display:flex;flex-direction:column;gap:.2rem;justify-content:flex-end;min-height:80px;padding:16px;background:var(--v);text-decoration:none;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit}.vs:hover{background:var(--v2)}
 .vt{font-family:"Cormorant Garamond",serif;font-size:1rem}
@@ -50,18 +50,19 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 .ii{position:relative;padding:20px;max-width:560px}
 .im{width:28px;height:28px;margin:0 auto 1.2rem;border:1px solid var(--e);transform:rotate(45deg);display:grid;place-items:center}.im::after{content:"";width:8px;height:8px;background:var(--e)}
 .intro p{color:var(--m);margin-bottom:1.3rem}
+#gateWrap{display:none;margin:0 auto 1.6rem;max-width:420px;width:100%}
+#gateWrap .ve{aspect-ratio:16/9}
+#gateWrap iframe{pointer-events:none}
 .in{margin-top:1rem;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--m)}
 .st{position:fixed;right:16px;bottom:16px;z-index:150;background:rgba(8,8,10,.85);color:var(--b);border:1px solid var(--l);padding:9px 15px;border-radius:999px;font:inherit;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
-#yt{position:fixed;width:1px;height:1px;left:-9999px;top:-9999px;overflow:hidden}
 @media(max-width:860px){nav{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--v);padding:10px 24px 20px;border-bottom:1px solid var(--l)}nav.open{display:flex}nav a{padding:12px 0;border-bottom:1px solid var(--l)}.tablets{grid-template-columns:1fr}}
 </style></head><body>
 
-<div class="intro" id="intro"><div class="ii"><div class="im"></div><h1>King of Kings<br>&amp; Lord of Lords</h1><p>The judgement of all mankind.</p><button class="btn" id="enter">Enter</button><div style="margin-top:1.2rem"><select id="tr2"></select></div><p class="in">Sound on</p></div></div>
+<div class="intro" id="intro"><div class="ii"><div class="im"></div><h1>King of Kings<br>&amp; Lord of Lords</h1><p>The judgement of all mankind.</p><div id="gateWrap"><div class="ve"><div id="ytGate"></div></div></div><button class="btn" id="enter">Enter</button><div style="margin-top:1.2rem"><select id="tr2"></select></div><p class="in">Sound on</p></div></div>
 
-<div id="yt"></div>
 <button class="st" id="sound" hidden>Sound on</button>
 
-<header><div class="w hi"><a class="br" href="#top"><span class="bm"></span><span class="bt">King of Kings</span></a><nav id="nav"><a href="#proclamation">Proclamation</a><a href="#commandments">Commandments</a><a href="#watch">Watch</a><a href="#contact">Contact</a></nav><select id="tr"></select></div></header>
+<header><div class="w hi"><a class="br" href="#top"><span class="bm"></span><span class="bt">King of Kings &amp; Lord of Lords</span></a><nav id="nav"><a href="#proclamation">Proclamation</a><a href="#commandments">Commandments</a><a href="#watch">Watch</a><a href="#contact">Contact</a></nav><select id="tr"></select></div></header>
 
 <main id="top">
 <section class="hero"><div class="w"><p class="eb">I am the Final Envoy &mdash; &ldquo;Aja&rdquo;</p><h1>Welcome to<br><em>Judgement Day</em>.</h1><p class="ld">I am KING OF KINGS, LORD OF LORDS. I am the son of the one true GOD. To the entire world, take heed.</p><div class="acts"><a class="btn" href="#proclamation">Read the proclamation</a><a class="btn gh" href="#commandments">The Commandments</a></div></div></section>
@@ -136,7 +137,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 <div><p class="bt" style="margin:0 0 .3rem">King of Kings &amp; Lord of Lords</p><p class="mu">I am my Father&rsquo;s very last Envoy.</p></div>
 <nav><a href="#proclamation">Proclamation</a><a href="#commandments">Commandments</a><a href="#watch">Watch</a><a href="#contact">Contact</a></nav>
 </div>
-<p class="mu sm">&copy; <span id="yr">2026</span> King of Kings. All rights reserved.</p>
+<p class="mu sm">&copy; <span id="yr">2026</span> King of Kings &amp; Lord of Lords. All rights reserved.</p>
 </div></footer>
 
 <script>
@@ -151,25 +152,27 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 var g='';for(var i=0;i<V.length;i++){var n=('0'+(i+1)).slice(-2);g+='<button class="vs" data-id="'+V[i]+'" type="button"><span class="eb" style="margin:0">Version '+n+'</span><span class="vt">The Almighty Shout</span></button>';}
 document.getElementById('vg').innerHTML=g;
 document.body.classList.add('locked');
-var player=null;
+var gate=null,player=null;
 function onYouTubeIframeAPIReady(){
+  gate=new YT.Player('ytGate',{videoId:'-q1WNpowFVY',playerVars:{autoplay:1,mute:1,controls:0,playsinline:1,rel:0,modestbranding:1,disablekb:1,fs:0},events:{onReady:function(e){e.target.mute();e.target.playVideo();}}});
   player=new YT.Player('yt2',{videoId:V[0],playerVars:{autoplay:0,controls:1,playsinline:1,rel:0,modestbranding:1},events:{onReady:function(e){e.target.cueVideoById(V[0]);}}});
 }
+setTimeout(function(){document.getElementById('gateWrap').style.display='block';},3000);
 document.getElementById('vg').addEventListener('click',function(e){
   var b=e.target.closest('.vs');if(!b)return;
-  var id=b.getAttribute('data-id');
-  if(player&&player.loadVideoById){player.loadVideoById(id);}
+  if(player&&player.loadVideoById){player.loadVideoById(b.getAttribute('data-id'));}
   document.getElementById('watch').scrollIntoView({behavior:'smooth'});
 });
 document.getElementById('enter').onclick=function(){
   document.getElementById('intro').classList.add('hide');
   document.body.classList.remove('locked');
+  if(gate&&gate.unMute){gate.unMute();gate.playVideo();}
   document.getElementById('sound').hidden=false;
 };
 var mu=false;
 document.getElementById('sound').onclick=function(){
   mu=!mu;
-  if(player){mu?player.mute():player.unMute();}
+  if(gate){mu?gate.mute():gate.unMute();}
   this.textContent=mu?'Sound off':'Sound on';
 };
 </script>
