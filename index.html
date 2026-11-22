@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>King of Kings &amp; Lord of Lords</title>
 <meta name="description" content="I am the son of the one true GOD. Judgement Day is here.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2308080a'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%23c8552b' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--v:#08080a;--v2:#0f0f13;--b:#f4f1ea;--e:#c8552b;--m:#8a8792;--l:rgba(244,241,234,.12)}
@@ -58,9 +59,6 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 .ii{position:relative;padding:20px;max-width:560px}
 .im{width:28px;height:28px;margin:0 auto 1.2rem;border:1px solid var(--e);transform:rotate(45deg);display:grid;place-items:center}.im::after{content:"";width:8px;height:8px;background:var(--e)}
 .intro p{color:var(--m);margin-bottom:1.3rem}
-#gateWrap{display:none;margin:0 auto 1.6rem;max-width:420px;width:100%}
-#gateWrap .ve{aspect-ratio:16/9}
-#gateWrap iframe{pointer-events:none}
 .in{margin-top:1rem;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--m)}
 .st{position:fixed;right:16px;bottom:16px;z-index:150;background:rgba(8,8,10,.85);color:var(--b);border:1px solid var(--l);padding:9px 15px;border-radius:999px;font:inherit;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
 @media(max-width:860px){nav{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--v);padding:10px 24px 20px;border-bottom:1px solid var(--l)}nav.open{display:flex}nav a{padding:12px 0;border-bottom:1px solid var(--l)}.tablets{grid-template-columns:1fr}}
@@ -68,7 +66,9 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 </head>
 <body>
 
-<div class="intro" id="intro"><div class="ii"><div class="im"></div><h1>King of Kings<br>&amp; Lord of Lords</h1><p>The judgement of all mankind.</p><div id="gateWrap"><div class="ve" id="gateBox"></div></div><button class="btn" id="enter">Enter</button><div style="margin-top:1.2rem"><select id="tr2"></select></div><p class="in">Sound on</p></div></div>
+<audio id="gateAudio" src="gate.mp3" preload="auto" loop></audio>
+
+<div class="intro" id="intro"><div class="ii"><div class="im"></div><h1>King of Kings<br>&amp; Lord of Lords</h1><p>The judgement of all mankind.</p><button class="btn" id="enter">Enter</button><div style="margin-top:1.2rem"><select id="tr2"></select></div><p class="in">Sound on</p></div></div>
 
 <button class="st" id="sound" hidden>Sound on</button>
 
@@ -133,11 +133,12 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 </div></section>
 
 <section id="contact"><div class="w"><p class="eb">Contact</p><h2>Say what you need to say</h2>
-<form action="#" method="post">
-<label>Your name<input type="text" name="name" required></label>
-<label>Email<input type="email" name="email" required></label>
-<label>Message<textarea name="message" rows="5" required></textarea></label>
+<form id="cf" novalidate>
+<label>Your name<input type="text" id="cn" required></label>
+<label>Email<input type="email" id="ce" required></label>
+<label>Message<textarea id="cm" rows="5" required></textarea></label>
 <button class="btn" type="submit">Send</button>
+<p class="mu" id="cmsg" style="font-size:.75rem;margin:0"></p>
 </form>
 </div></section>
 </main>
@@ -151,38 +152,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}footer nav a{text-decoration:non
 </div></footer>
 
 <script>
-var L=[["es","Espanol"],["fr","Francais"],["de","Deutsch"],["it","Italiano"],["pt","Portugues"],["nl","Nederlands"],["ru","Russkiy"],["pl","Polski"],["uk","Ukrainska"],["el","Ellinika"],["he","Ivrit"],["ar","Arabiya"],["fa","Farsi"],["tr","Turkce"],["hi","Hindi"],["bn","Bangla"],["ur","Urdu"],["zh-CN","Chinese Simplified"],["zh-TW","Chinese Traditional"],["ja","Japanese"],["ko","Korean"],["vi","Vietnamese"],["th","Thai"],["id","Indonesia"],["tl","Tagalog"],["sw","Kiswahili"],["af","Afrikaans"],["sv","Svenska"],["no","Norsk"],["da","Dansk"],["fi","Suomi"],["cs","Cestina"],["hu","Magyar"],["ro","Romana"],["bg","Balgarski"],["hr","Hrvatski"],["sr","Srpski"],["lt","Lietuviu"],["lv","Latviesu"],["et","Eesti"],["sq","Shqip"],["ka","Kartuli"],["hy","Hayeren"],["az","Azerbaycan"],["kk","Qazaq"],["uz","Ozbek"],["km","Khmer"],["lo","Lao"],["my","Myanmar"],["cy","Cymraeg"],["ga","Gaeilge"],["mt","Malti"],["eo","Esperanto"]];
+var MAIL="averyfilms@optusnet.com.au";
+var L=[["es","Espanol"],["fr","Francais"],["de","Deutsch"],["it","Italiano"],["pt","Portugues"],["ru","Russkiy"],["ar","Arabiya"],["hi","Hindi"],["zh-CN","Chinese"],["ja","Japanese"],["ko","Korean"],["id","Indonesia"]];
 var V=["AuhdY4H2Nmw","juk8t574cbE","cNTXUXLTBLo","c9iK-vYy9Wc","lNBx6Yh6INg","CnzNF4MLdxI","CJFX289PLA4","8455jhxq4c8","fQ8Z_J0Nmfs","0JinfFfDahQ","LmPD8KsDq14","LGYSyEvrK6U"];
-var GATE="-q1WNpowFVY";
-function opts(s){var h='<option value="">Translate</option>';for(var i=0;i<L.length;i++){h+='<option value="'+L[i][0]+'">'+L[i][1]+'</option>';}s.innerHTML=h;}
-opts(document.getElementById('tr'));opts(document.getElementById('tr2'));
-function go(v){if(!v)return;location.href='https://translate.google.com/translate?sl=en&tl='+v+'&u='+encodeURIComponent(location.href);}
-document.getElementById('tr').onchange=function(){go(this.value);};
-document.getElementById('tr2').onchange=function(){go(this.value);};
-document.getElementById('yr').textContent=new Date().getFullYear();
-var g='';for(var i=0;i<V.length;i++){var n=('0'+(i+1)).slice(-2);g+='<button class="vs" data-id="'+V[i]+'" type="button"><span class="eb" style="margin:0">Version '+n+'</span><span class="vt">The Almighty Shout</span></button>';}
-document.getElementById('vg').innerHTML=g;
-document.body.classList.add('locked');
-function buildGate(mute){
-  document.getElementById('gateBox').innerHTML='<iframe src="https://www.youtube.com/embed/'+GATE+'?autoplay=1&mute='+(mute?1:0)+'&controls=0&rel=0&playsinline=1&loop=1&playlist='+GATE+'" title="Gate" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>';
-}
-setTimeout(function(){document.getElementById('gateWrap').style.display='block';buildGate(true);},3000);
-document.getElementById('vg').addEventListener('click',function(e){
-  var b=e.target.closest('.vs');if(!b)return;
-  document.getElementById('yt2').src='https://www.youtube.com/embed/'+b.getAttribute('data-id')+'?rel=0&playsinline=1&autoplay=1';
-  document.getElementById('watch').scrollIntoView({behavior:'smooth'});
-});
-document.getElementById('enter').onclick=function(){
-  document.getElementById('intro').classList.add('hide');
-  document.body.classList.remove('locked');
-  buildGate(false);
-  document.getElementById('sound').hidden=false;
-};
-var mu=false;
-document.getElementById('sound').onclick=function(){
-  mu=!mu;buildGate(!mu);
-  this.textContent=mu?'Sound off':'Sound on';
-};
-</script>
-</body>
-</html>
+function opts(s){var h='<option value="">Translate</option>';for(var i=0;i<L.length;i++){h+='<option value="'+
